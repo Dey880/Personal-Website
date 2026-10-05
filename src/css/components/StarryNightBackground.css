@@ -1,0 +1,168 @@
+:root {
+  --star: #ffffff;
+  --star-glow: rgba(255, 255, 255, 0.55);
+  --shooting-star: #ffffff;
+  --rgb-shooting-star-glow: 255, 255, 255;
+}
+
+.starrynight-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  /* background: linear-gradient(
+    0deg,
+    rgba(20, 68, 43, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); */
+  background: #16161d;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  background-color: var(--star);
+}
+
+@keyframes twinkle1 {
+  0% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  20% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  40% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  60% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  80% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  100% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+}
+
+@keyframes twinkle2 {
+  0% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  20% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  40% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  60% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  80% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  100% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+}
+
+@keyframes twinkle3 {
+  0% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  20% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  40% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  60% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  80% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  100% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+}
+
+@keyframes twinkle4 {
+  0% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  20% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+  40% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  60% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  80% {
+    box-shadow: 0 0 8px 2px var(--star-glow);
+  }
+  100% {
+    box-shadow: 0 0 -8px 2px var(--star-glow);
+  }
+}
+
+/*
+        Pure CSS Shooting Star Animation Effect Copyright (c) 2021 by Delroy Prithvi (https://codepen.io/delroyprithvi/pen/LYyJROR)
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, includin[...]
+
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT[...]
+        */
+
+.shootingstar {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--shooting-star);
+  border-radius: 50%;
+  animation: shootingStar 7s linear forwards;
+  left: initial;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none !important;
+  }
+
+  .shootingstar {
+    display: none;
+  }
+}
+
+.shootingstar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--shooting-star), transparent);
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1500px);
+    opacity: 0;
+  }
+}

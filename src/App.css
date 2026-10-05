@@ -1,3 +1,20 @@
+.site-shell {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.site-shell > nav,
+.site-content {
+  position: relative;
+  z-index: 1;
+}
+
+.site-content {
+  flex: 1;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
